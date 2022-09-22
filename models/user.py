@@ -5,8 +5,8 @@ from config.db import meta,engine
 
 users=Table("users",meta,Column(
     "id",Integer,primary_key=True, autoincrement = True),
-    Column("name",String(255)),
-    Column("email",String(255)),
+    Column("name",String(255),primary_key=True),
+    Column("email",String(255),primary_key=True),
     Column("password",String(20)))
 
 meta.create_all(engine)
